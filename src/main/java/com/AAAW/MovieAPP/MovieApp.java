@@ -9,12 +9,19 @@ public class MovieApp {
 
     public static void main(String[] args) {
         // Load environment variables
-        Dotenv dotenv = Dotenv.configure().load();
+//        Dotenv dotenv;
+//        if (isDevelopmentEnvironment()) {
+//            dotenv = Dotenv.load();
+//            System.setProperty("MONGO_URI", dotenv.get("MONGO_URI"));
+//        }
 
-        // Access the MONGO_URI variable
-        System.setProperty("MONGO_URI", dotenv.get("MONGO_URI"));
         SpringApplication.run(MovieApp.class, args);
 
 
     }
+
+//    private static boolean isDevelopmentEnvironment() {
+//        return "dev".equalsIgnoreCase(System.getProperty("spring.profiles.active"));
+//    }
+
 }
